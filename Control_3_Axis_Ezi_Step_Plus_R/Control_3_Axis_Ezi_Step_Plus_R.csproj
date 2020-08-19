@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A5B3529-8B40-4BC6-9604-ABFE0FEF6675}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Control_3_Axis_Ezi_Step_Plus_R</RootNamespace>
+    <AssemblyName>Control_3_Axis_Ezi_Step_Plus_R</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Advantech.Adam, Version=8.2.12.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Advantech.Adam.DLL</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Common, Version=8.2.12.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Advantech.Common.DLL</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Graph, Version=8.2.12.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Advantech.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Protocol, Version=8.2.12.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Advantech.Protocol.DLL</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculate.cs" />
+    <Compile Include="CoordinatesBendingConcave\XcoordinateBendingConcave.cs" />
+    <Compile Include="CoordinatesBendingConcave\YcoordinateBendingConcave.cs" />
+    <Compile Include="CoordinatesBendingConcave\ZcoordinateBendingConcave.cs" />
+    <Compile Include="CoordinatesBendingConvex\XcoordinateBendingConvex.cs" />
+    <Compile Include="CoordinatesBendingConvex\ZcoordinateBendingConvex.cs" />
+    <Compile Include="CoordinatesBendingConvex\YcoordinateBendingConvex.cs" />
+    <Compile Include="Coordinates\Xcoordinate.cs" />
+    <Compile Include="Coordinates\Ycoordinate.cs" />
+    <Compile Include="Coordinates\Zcoordinate.cs" />
+    <Compile Include="fmConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmConnect.Designer.cs">
+      <DependentUpon>fmConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmLoadConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmLoadConnect.Designer.cs">
+      <DependentUpon>fmLoadConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmMain.Designer.cs">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSettingPointsPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSettingPointsPosition.Designer.cs">
+      <DependentUpon>fmSettingPointsPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSpeedJOG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSpeedJOG.Designer.cs">
+      <DependentUpon>fmSpeedJOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmTestGraphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmTestGraphics.Designer.cs">
+      <DependentUpon>fmTestGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMotion\fmMotionGraphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMotion\fmMotionGraphics.Designer.cs">
+      <DependentUpon>fmMotionGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMotion\fmMotionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMotion\fmMotionTest.Designer.cs">
+      <DependentUpon>fmMotionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMotion\fmStartMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMotion\fmStartMotion.Designer.cs">
+      <DependentUpon>fmStartMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetting\fmSettingCoorZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetting\fmSettingCoorZ.Designer.cs">
+      <DependentUpon>fmSettingCoorZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetting\fmSettingPointBendingConcave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetting\fmSettingPointBendingConcave.Designer.cs">
+      <DependentUpon>fmSettingPointBendingConcave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetting\fmSettingPointBendingConvex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetting\fmSettingPointBendingConvex.Designer.cs">
+      <DependentUpon>fmSettingPointBendingConvex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\fmBoardList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\fmBoardList.Designer.cs">
+      <DependentUpon>fmBoardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\LIB_EziMOTIONPlusR.cs" />
+    <Compile Include="Lib\MOTION_DEFINE.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetPoint.Designer.cs">
+      <DependentUpon>SetPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLite.cs" />
+    <Compile Include="Template\GetTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Template\GetTemplate.Designer.cs">
+      <DependentUpon>GetTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VarGlobal.cs" />
+    <EmbeddedResource Include="fmConnect.resx">
+      <DependentUpon>fmConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmLoadConnect.resx">
+      <DependentUpon>fmLoadConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmMain.resx">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSettingPointsPosition.resx">
+      <DependentUpon>fmSettingPointsPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSpeedJOG.resx">
+      <DependentUpon>fmSpeedJOG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmTestGraphics.resx">
+      <DependentUpon>fmTestGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMotion\fmMotionGraphics.resx">
+      <DependentUpon>fmMotionGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMotion\fmMotionTest.resx">
+      <DependentUpon>fmMotionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMotion\fmStartMotion.resx">
+      <DependentUpon>fmStartMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetting\fmSettingCoorZ.resx">
+      <DependentUpon>fmSettingCoorZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetting\fmSettingPointBendingConcave.resx">
+      <DependentUpon>fmSettingPointBendingConcave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetting\fmSettingPointBendingConvex.resx">
+      <DependentUpon>fmSettingPointBendingConvex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\fmBoardList.resx">
+      <DependentUpon>fmBoardList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SetPoint.resx">
+      <DependentUpon>SetPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\GetTemplate.resx">
+      <DependentUpon>GetTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_UI_Basic_GLYPH-78_4733346.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_gtk-disconnect_23310.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_network-transmit-receive_118951.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
