@@ -15,6 +15,8 @@ namespace Control_3_Axis_Ezi_Step_Plus_R
         public const byte iSLAVE_X = 1;
         public const byte iSLAVE_Y = 2;
         public const byte iSLAVE_Z = 3;
+        
+        public string str="kaka";
 
         private uint dwAxisStatus_x;
         private uint dwAxisStatus_y;
