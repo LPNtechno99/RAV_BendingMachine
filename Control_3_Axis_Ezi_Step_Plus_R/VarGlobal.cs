@@ -17,6 +17,7 @@ namespace Control_3_Axis_Ezi_Step_Plus_R
         public const byte iSLAVE_Z = 3;
         
         public static byte demo; //Test github
+        public string str = "Thu push len server github";
 
         private uint dwAxisStatus_x;
         private uint dwAxisStatus_y;
